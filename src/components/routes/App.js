@@ -6,17 +6,14 @@ function App(){
     const [handle, setHandle] = React.useState(''); 
 
     const handleClick = () => {
-        console.log( handle )
+        console.log(handle )
     }
 
     return (
         <>
             <div>
-                <img src={logo} alt="Get tweets logo" width="150" height="30" />
-                <input type="text" placeholder='@handle' onChange = {
-                    (event)=> {
-                     return event.target.value 
-                     }}/>
+                <img src={logo} alt="Get tweets logo" width="180" height="40 " />
+                <input type="text" placeholder='@handle' onChange = {event => setHandle(event.target.value)}/>
                 <button onClick={handleClick}> Get </button>
             </div>
         </>
