@@ -1,25 +1,41 @@
-import * as React from 'react';
-import logo from '../imgs/get-tweets-logo.png';
+import * as React from 'react'
+import Posts from '../views/Posts'
+import Todos from '../views/Todos'
+import Home from '../views/Home'
 
-function App(){
+import {
+    BrowserRouter as Router,
+    Switch, Route, Link
+} from 'react-router-dom'
 
-    const [handle, setHandle] = React.useState(''); 
-
-    const handleClick = () => {
-        console.log(handle )
-    }
+function App() {
+    const [page, setPage] = React.useState(null)
 
     return (
-        <>
-            <div>
-                <img src={logo} alt="Get tweets logo" width="180" height="40 " />
-                <input type="text" placeholder='@handle' onChange = {event => setHandle(event.target.value)}/>
-                <button onClick={handleClick}> Get </button>
-            </div>
-        </>
+        <Router>
+            {/* <button onClick={() => setPage(page === 'posts' ? 'todos' : 'posts')} >
+                {page === 'posts' ? 'Todos' : 'Posts'}
+            </button> */}
+            {/* <Link to="/posts">Posts</Link>
+            <Link to="/todos">Todos</Link> */}
+            <Switch>
+                <Route path="/" exact>
+                    <Home />
+                </Route>
+                <Route path="/posts">
+                    <Posts />
+                </Route>
+                <Route path="/todos">
+                    <Todos />
+                </Route>
+            </Switch>
+{/*             {page === 'posts' ? <button onClick={() => setPage('todos')} > Todos </button>
+                : <button onClick={() => setPage('posts')} > Posts </button>} */}
+
+            {/* {page === 'posts' ? <Posts /> : <Todos />} */}
+        </Router>
     )
-
-
 }
 
-export default App;
+
+export default App
