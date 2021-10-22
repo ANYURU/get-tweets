@@ -2,10 +2,11 @@ import * as React from 'react'
 import Posts from '../views/Posts'
 import Todos from '../views/Todos'
 import Home from '../views/Home'
+import Apost from '../views/Apost'
 
 import {
     BrowserRouter as Router,
-    Switch, Route, Link
+    Switch, Route, 
 } from 'react-router-dom'
 
 function App() {
@@ -25,9 +26,13 @@ function App() {
                 <Route path="/posts">
                     <Posts />
                 </Route>
-                <Route path="/todos">
+                <Route path="/todos" exact>
                     <Todos />
                 </Route>
+                <Route path="/posts/:id" exact>
+                    <Apost />
+                </Route>
+                
             </Switch>
 {/*             {page === 'posts' ? <button onClick={() => setPage('todos')} > Todos </button>
                 : <button onClick={() => setPage('posts')} > Posts </button>} */}

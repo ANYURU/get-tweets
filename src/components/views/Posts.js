@@ -1,8 +1,9 @@
 // import React, {useState, useEffect} from 'react'
 import * as React from 'react'
 // import axios from 'axios'
+// import Home from './Home'
 import getData from '../helpers/fetchData'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 function Posts() { //Opening a component
 
     const [error, setError] = React.useState('')
@@ -16,13 +17,14 @@ function Posts() { //Opening a component
     const handlePosts = async () => {
         const endpoint = 'posts'
         const posts = await getData(endpoint);
+        // console.log(posts)
 
         if(posts?.error !== undefined) return setError(posts.error)
         setPosts(posts)
     }
 
     const handleClick = () => {
-        handlePosts( )
+        handlePosts()
     }
 
     // const getPosts = async () => {
@@ -55,7 +57,11 @@ function Posts() { //Opening a component
 
     return (
         <>
+            {/* <Link to="/Home">Home</Link> */}
+            
+            
             <Link to="/todos">Todos</Link>
+            <Link to="/">Home</Link>
             <h1>Posts</h1>
             {error}
             <div>
@@ -65,7 +71,14 @@ function Posts() { //Opening a component
             {posts?.length <= 0 && <div>Loading...</div>}
             {posts?.length > 0 &&
                 <ul>
-                    {posts.map(post => <li key={post.id}><h5>{post.title}</h5> <p>{post.body}</p></li>)}
+                    {posts.map(post => 
+                        <Link key={post.id} to={`/posts/${post.id}`}>
+                            <li>
+                                <h1>{post.title}</h1>
+                                <p>{post.body}</p>
+                            </li>
+
+                        </Link>)}
                 </ul>
             }
         </>

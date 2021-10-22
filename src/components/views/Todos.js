@@ -59,6 +59,7 @@ function Todos() { //Opening a component
     return (
         <>
             <Link to="/posts">Posts</Link>
+            <Link to="/">Home</Link>
             <h1>Todos</h1>
             {error}
             <div>
@@ -70,48 +71,36 @@ function Todos() { //Opening a component
                                     {todos.map(todo => <li key={todo.id}><h5>{todo.title}</h5> <p>{todo.completed === true ? "Completed": "Incomplete" }</p></li>)}
                                 </ul>}
             {/* {todos?.length > 0 &&<table>
-                    <thead>
-                        <tr>
-                            <th>Todos</th>
-                            <th>status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {todos.map(todo => {}
-                            
-                            <tr>
-                                <td> 
-                                    {todos.map(todo => todo.title)}
-                                </td>
-                            <td>
-                                {todos.map(todo => todo.completed === false ? 'incomplete': 'completed')}   
-                            </td>
-                        </tr>
-
-                        )}
-                        <tr>
-                            <td> 
-                                {todos.map(todo => todo.title)}
-                            </td>
-                            <td>
-                                {todos.map(todo => todo.completed === false ? 'incomplete': 'completed')}   
-                            </td>
-                        </tr>
-
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td>Todos</td>
-                            <td>status</td>
-                        </tr>
-                    </tfoot>
-                </table> */}
-                    
-                
-                
-            
-        </>
+                                        <thead>
+                                            <tr>
+                                                <th>Todos</th>
+                                                <th>status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {todos.map(todo => 
+                                                <tr key={todo.id}>
+                                                    <td> 
+                                                        {todo.title}
+                                                    </td>
+                                                    <td>
+                                                        {todo => todo.completed === false ? 'incomplete': 'completed'}   
+                                                    </td>
+                                                </tr>
+                                            )}
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Todos</th>
+                                                <th>status</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+    } */}
+    </>            
     )
 }
+
+
 
 export default Todos
