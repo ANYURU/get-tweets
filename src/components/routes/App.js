@@ -23,13 +23,13 @@ function App() {
                 <Route path="/" exact>
                     <Home />
                 </Route>
-                <Route path="/posts">
+                <Route path="/posts" exact>
                     <Posts />
                 </Route>
-                <Route path="/todos" exact>
+                <Route path="/todos">
                     <Todos />
                 </Route>
-                <Route path="/posts/:id" exact>
+                <Route path="/posts/:id">
                     <Apost />
                 </Route>
                 

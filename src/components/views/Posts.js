@@ -23,8 +23,8 @@ function Posts() { //Opening a component
         setPosts(posts)
     }
 
-    const handleClick = () => {
-        handlePosts()
+    const handleClick = async () => {
+        await handlePosts()
     }
 
     // const getPosts = async () => {
@@ -65,7 +65,7 @@ function Posts() { //Opening a component
             <h1>Posts</h1>
             {error}
             <div>
-                <button onClick={handleClick}>Get Posts</button>
+                <button onClick={handleClick} style={{ 'display': 'flex', 'background-color':'#233456', 'margin':'auto', 'padding-left':'3px', 'paddingRight': '4px'}}>Get Posts</button>
             </div>
 
             {posts?.length <= 0 && <div>Loading...</div>}
