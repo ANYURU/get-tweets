@@ -2,6 +2,7 @@
 import * as React from 'react'
 // import axios from 'axios'
 // import Home from './Home'
+import "../../styles/posts.css"
 import getData from '../helpers/fetchData'
 import { Link } from 'react-router-dom'
 function Posts() { //Opening a component

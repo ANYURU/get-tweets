@@ -1,0 +1,14 @@
+a li {
+    font-size: 0.9rem;
+    color: blue;
+    padding: 10px 20px;
+    border-bottom: 1px solid gray;
+    display: block;
+    max-width: 90%;
+    margin: auto
+}
+
+a li:hover {
+    background-color: rgb(185, 163, 226);
+}
+
